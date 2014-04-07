@@ -70,7 +70,7 @@ app.post("/users", function (req, res) {
 		zipcode=req.body.zipcode,
 		phonenumber=req.body.phonenumber;
 	connection.query('INSERT INTO nodejs (fname, lname, address, zipcode, phonenumber, lupdate, weather, location, temperature) VALUES (?, ?, ? ,?, ?, ?, ?, ?, ?);', [fname, lname, address, zipcode, phonenumber, up, weath, loc, temp], function(err, docs) {
-	console.log("inserted new user!");
+	//console.log("inserted new user!");
 	if (err) res.json(err);
 	res.redirect('users');
 		});
@@ -85,7 +85,7 @@ app.post("/users", function (req, res) {
 app.post('/users/delete', function(req, res) {
 	var del = req.body.id;
 	connection.query('DELETE FROM nodejs WHERE id = (?);',[del], function(err, docs) {
-	console.log("deleted user!");
+	//console.log("deleted user!");
 	if (err) res.json(err);
 	res.redirect('users');
 		});
@@ -109,7 +109,7 @@ app.post("/users/edit/sug", function (req, res) {
 
 	connection.query('UPDATE nodejs SET fname=(?), lname=(?), address=(?), zipcode=(?), phonenumber=(?), weather=(?), location=(?), temperature=(?), lupdate=(?) WHERE id=(?)', 
 		[fname, lname, address, zipcode, phonenumber, weath, loc, temp, up, req.body.id], function(err, docs) {
-	console.log("editted user!");
+	//console.log("editted user!");
 	if (err) res.json(err);
 	res.redirect('users');
 		});
@@ -142,7 +142,7 @@ app.post("/users/weather", function (req, res) {
 
 	connection.query('UPDATE nodejs SET weather=(?), location=(?), temperature=(?), lupdate=(?) WHERE id=(?)', 
 		[weath, loc, temp, up, req.body.id], function(err, docs) {
-	console.log("Updated weather!");
+	//console.log("Updated weather!");
 	if (err) res.json(err);
 	res.render('weather',{name: req.body.name, address: req.body.address, current: currentup, weather: weath, location: loc, temperature: temp, update: up} );
 		});
@@ -154,5 +154,5 @@ app.post("/users/weather", function (req, res) {
 
 //create server
 http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+//  console.log('Express server listening on port ' + app.get('port'));
 });

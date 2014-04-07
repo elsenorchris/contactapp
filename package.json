@@ -1,17 +1,30 @@
 {
-  "name": "application-name",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node app.js"
-  },
+  "name": "sug",
+  "version": "0.0.0",
+  "description": "contact book",
+  "main": "app.js",
   "dependencies": {
-    "express": "3.5.1",
-    "jade": "*"
-  }
-  {
-  "engines": {
-    "node": "0.10.x"
-  }
-}
+    "express": "^3.5.1",
+    "jade": "^1.3.1",
+    "mysql": "^2.1.1",
+    "wunderbar": "0.0.2",
+    "logfmt": "^1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elsenorchris/sug.git"
+  },
+  "keywords": [
+    "heroku"
+  ],
+  "author": "Chris Alonso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elsenorchris/sug/issues"
+  },
+  "homepage": "https://github.com/elsenorchris/sug"
 }

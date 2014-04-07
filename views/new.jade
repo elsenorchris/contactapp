@@ -1,0 +1,18 @@
+extends layout
+block content
+ br
+ h1.text-center.myhead Add New Contact
+
+ form.text-center(method="POST" , action="/users")
+  p First Name:
+    input#title(type="text" , name="fname")
+  p Last Name:
+    input#title(type="text" , name="lname")
+  p Address:
+    input#body(type="text" , name="address")
+  p Zipcode:
+    input#body(type="text" , name="zipcode")
+  p PhoneNumber:
+    input#body(type="text" , name="phonenumber")
+ 
+  p: button.btn-lg.btn-default(type="submit") Add New User

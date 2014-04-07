@@ -1,0 +1,51 @@
+extends layout
+block content
+ br
+ h1.text-center.myhead Showing All Contacts With Last Name Beginning With Letter '#{letter}'
+ br
+ div(style="margin-left: 20px;")
+  a(href="../../users/search" style="color:black;") Search Contacts
+  br
+
+ ul(style="list-style-type: none; padding-left: 0px;")
+  - each user in users
+   br
+   div.text-center(style="background-color: #CCEECC;" )
+    br
+    li  First Name : #{user.fname}
+    li  Last Name  : #{user.lname}
+    li  Address    : #{user.address}
+    li  Zipcode    : #{user.zipcode}
+    li  PhoneNumber: #{user.phonenumber}
+    li  Weather    : #{user.weather}
+    li  Location   : #{user.location}
+    li  Temperature: #{user.temperature}
+
+     form( method="post", action="/users/edit") 
+      input(name="id", type="hidden", value=user.id)
+      input(name="fname", type="hidden", value=user.fname) 
+      input(name="lname", type="hidden", value=user.lname) 
+      input(name="address", type="hidden", value=user.address) 
+      input(name="zipcode", type="hidden", value=user.zipcode) 
+      input(name="phonenumber", type="hidden", value=user.phonenumber)
+      button.btn-lg.btn-warning(type="submit") EDIT
+     form( method="post", action="/users/delete") 
+      input(name="id", type="hidden", value=user.id) 
+      button.btn-lg.btn-danger(type="submit") DELETE
+    br                
+   br
+   hr
+
+
+ br
+
+ div.text-center
+  a(href="/users")
+   button.btn-lg.btn-default Return to Users
+  br
+
+  br
+  a(href="/")
+   button.btn-lg.btn-default.buttonstyle Home
+  br 
+  br

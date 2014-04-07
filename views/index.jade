@@ -1,0 +1,17 @@
+extends layout
+block content
+  br
+  br
+  h1.text-center.myhead Welcome to your Contact Book
+  br
+  p.text-center The weather in Gainesville is currently #{currentweather}
+  p.text-center The temperature is currently #{currenttemp} but it feels like #{feelslike}
+  p.text-center Winds are #{winds}
+  p
+  img.img-responsive(src= "http://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/800px-Smiley.svg.png" width= "300px" style= "margin: 0 auto;")
+
+  br
+  h3.text-center.myhead
+   a(href='/users' style = "color: black;") Show All Contacts
+  br
+

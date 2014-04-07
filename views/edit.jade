@@ -1,0 +1,19 @@
+extends layout
+block content
+ br
+
+ h1.text-center.myhead  Edit Contact
+ form.text-center(method="POST" , action="/users/edit/sug")
+  p First Name:
+    input#body(type="text" , name="fname" value=fname)
+  p Last Name:
+    input#body(type="text" , name="lname" value=lname)
+  p Address:
+    input#body(type="text" , name="address", value=address)
+  p Zipcode:
+    input#body(type="text" , name="zipcode", value=zip)
+  p PhoneNumber:
+    input#body(type="text" , name="phonenumber", value=phonenumber)
+ 
+  p: button.btn-warning.btn-lg(type="submit") Edit Contact
+     input(name="id", type="hidden", value=id) 

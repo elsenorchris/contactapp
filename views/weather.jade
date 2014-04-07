@@ -1,0 +1,31 @@
+extends layout
+block content
+ br
+ h1.text-center.myhead Current Weather for #{name}
+ br
+
+ div.text-center
+  p Weather    : #{weather}
+  p Location   : #{location}
+  p Temperature: #{temperature}
+  p #{update}
+  br
+  br
+  br
+  a(href="/")
+   button.btn-lg.btn-default.buttonstyle Home
+  br 
+  br
+  a(href="/users")
+   button.mybuttonstyle.btn-lg.btn-default Return to Users
+  br
+  br
+
+ 
+ p(style="margin-left: 30px") Last looked up #{current}
+ br
+ br
+
+
+ 
+

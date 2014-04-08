@@ -6,8 +6,7 @@ block content
  div(style="margin-left: 20px;")
   a(href="users/search" style="color:black;") Search Contacts
   br
-
- ul(style="list-style-type: none; padding-left: 0px;")
+ ul(style="list-style-type: none; padding: 0px;")
   - each user in users
    br
    div.text-center(style="background-color: #CCEECC;" )
@@ -24,13 +23,13 @@ block content
     br
 
     div.row
-     form.col-md-4( method="post", action="/users/weather" style="float:left;") 
+     form.col-xs-4( method="post", action="/users/weather" style="float:left;") 
       input(name="name", type="hidden", value=user.fname)
       input(name="id", type="hidden", value=user.id)
       input(name="zipcode", type="hidden", value=user.zipcode) 
       button.btn-lg.btn-primary(type="submit") Update Weather
 
-     form.col-md-4( method="post", action="/users/edit") 
+     form.col-xs-4( method="post", action="/users/edit") 
       input(name="id", type="hidden", value=user.id)
       input(name="fname", type="hidden", value=user.fname) 
       input(name="lname", type="hidden", value=user.lname) 
@@ -39,7 +38,7 @@ block content
       input(name="phonenumber", type="hidden", value=user.phonenumber)
       button.btn-lg.btn-warning(type="submit") EDIT
 
-     div.col-md-4
+     div.col-xs-4
       button.btn-lg.btn-danger(data-toggle="modal" data-target="##{user.id}") DELETE
 
      div(class="modal fade" id="#{user.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")

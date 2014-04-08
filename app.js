@@ -37,8 +37,8 @@ app.get('/', function( req, res) {
 
 //connect to mysql database
 var connection = mysql.createConnection({
-	host : 'localhost',
-	user : 'root',
+	host : 'db4free.net',
+	user : 'elsenorchris11',
 	password : 'bluJay11',
 	database : 'nodejsmysql'
 });

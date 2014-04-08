@@ -32,7 +32,7 @@ block content
         div(class="modal-body") Are you sure you want to delete #{user.fname} ?
         div(class="modal-footer")
          form.col-md-2( method="post", action="/users/delete" style="float:right;") 
-          input(name="id", type="hidden", value=id) 
+          input(name="id", type="hidden", value="#{user.id}") 
           button(type="submit" class="btn btn-danger") Delete
          button(type="button" class="btn btn-default" data-dismiss="modal" style="float:right;") No
 

@@ -22,6 +22,20 @@ block content
     li  Temperature: #{user.temperature}
     li  #{user.lupdate}
     br
+
+    div(class="modal fade" id="#{user.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+      div(class="modal-dialog")
+       div(class="modal-content" style="background:#FFBBBB")
+        div(class="modal-header")
+         button(type="button" class="close" data-dismiss="modal" aria-hidden="true") X
+         h4(class="modal-title" id="myModalLabel") 
+        div(class="modal-body") Are you sure you want to delete #{user.fname} ?
+        div(class="modal-footer")
+         form.col-md-2( method="post", action="/users/delete" style="float:right;") 
+          input(name="id", type="hidden", value=id) 
+          button(type="submit" class="btn btn-danger") Delete
+         button(type="button" class="btn btn-default" data-dismiss="modal" style="float:right;") No
+
     div.row
      form.col-md-4( method="post", action="/users/weather" style="float:left;") 
       input(name="name", type="hidden", value=user.fname)
@@ -38,9 +52,10 @@ block content
       input(name="phonenumber", type="hidden", value=user.phonenumber)
       button.btn-lg.btn-warning(type="submit") EDIT
 
-     form.col-md-4( method="post", action="/users/delete") 
-      input(name="id", type="hidden", value=user.id) 
-      button.btn-lg.btn-danger(type="submit") DELETE
+     div.col-md-4
+      button.btn-lg.btn-danger(data-toggle="modal" data-target="##{user.id}") DELETE
+
+     
     br 
     br               
    br
@@ -63,3 +78,7 @@ block content
    button.btn-lg.btn-default.buttonstyle Home
   br 
   br
+
+  
+
+
